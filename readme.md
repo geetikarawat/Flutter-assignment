@@ -224,7 +224,7 @@ Follow these steps to verify that offline caching works correctly:
 ---
 
 ## Architecture Overview
-
+```
 The app follows *Clean Architecture* with three main layers:
 
 
@@ -248,7 +248,7 @@ The app follows *Clean Architecture* with three main layers:
 - *Presentation* defines what the user sees (screens, widgets, state)
 
 Dependencies point *inward* — the domain layer has zero dependencies on data or presentation.
-
+```
 ---
 
 ## State Management
