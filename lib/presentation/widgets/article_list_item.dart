@@ -46,42 +46,55 @@ class ArticleListItem extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    if (article.sourceName != null &&
-                        article.sourceName!.isNotEmpty)
-                      Text(
-                        article.sourceName!.toUpperCase(),
-                        style: const TextStyle(
-                          fontFamily: 'RobotoSlab',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 12,
-                          color: Colors.redAccent,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                    const SizedBox(height: 8),
                     Text(
                       article.title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         fontFamily: 'RobotoSlab',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24, // close to 25–32dp spec
-                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                        color: Color(0xFFF2F2F2),
                         height: 1.2,
                       ),
                     ),
-                    const SizedBox(height: 8),
-                    if (article.publishedAt != null)
-                      Text(
-                        _formatDate(article.publishedAt!),
-                        style: TextStyle(
-                          fontFamily: 'RobotoSlab',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                          color: Colors.grey.shade300,
+                    const SizedBox(height: 12),
+                    Row(
+                      children: [
+                        Container(
+                          width: 3,
+                          height: 12,
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(1.5),
+                          ),
                         ),
-                      ),
+                        const SizedBox(width: 6),
+                        if (article.sourceName != null &&
+                            article.sourceName!.isNotEmpty)
+                          Text(
+                            article.sourceName!,
+                            style: const TextStyle(
+                              fontFamily: 'RobotoSlab',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 12,
+                              color: Color(0xFFBABABA),
+                            ),
+                          ),
+                        if (article.publishedAt != null) ...[
+                          const SizedBox(width: 12),
+                          Text(
+                            _formatDate(article.publishedAt!),
+                            style: const TextStyle(
+                              fontFamily: 'RobotoSlab',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 12,
+                              color: Color(0xFFBABABA),
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -106,9 +119,8 @@ class ArticleListItem extends StatelessWidget {
   }
 
   String _formatDate(DateTime dt) {
-    return '${dt.day.toString().padLeft(2, '0')}/'
-        '${dt.month.toString().padLeft(2, '0')}/'
-        '${dt.year}';
+    return '${dt.year}-'
+        '${dt.month.toString().padLeft(2, '0')}-'
+        '${dt.day.toString().padLeft(2, '0')}';
   }
 }
-
