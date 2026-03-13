@@ -1,0 +1,46 @@
+name: news_app
+description: A Flutter news headlines app with offline cache.
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management
+  provider: ^6.1.2
+
+  # Dependency injection
+  get_it: ^8.0.0
+
+  # Networking
+  dio: ^5.5.0+1
+
+  # Connectivity
+  connectivity_plus: ^6.0.3
+
+  # Local persistence
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.4
+
+  # Image loading & caching
+  cached_network_image: ^3.4.1
+
+  # Typography
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
