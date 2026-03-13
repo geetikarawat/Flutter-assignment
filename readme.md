@@ -46,7 +46,7 @@ A Flutter news headlines application built with *Clean Architecture, **offline c
 
 ## Project Structure
 
-
+```
 lib/
 ├── main.dart                              # App entry point, Hive init, Provider setup
 │
@@ -91,7 +91,7 @@ lib/
         ├── article_list_item.dart         # Single headline row widget
         ├── error_view.dart                # Error message + retry button
         └── loading_view.dart              # Loading spinner
-
+```
 
 ---
 
